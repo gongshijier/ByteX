@@ -4,6 +4,7 @@ buildscript {
     ext.kotlin_version = '1.3.21'
     apply from: rootProject.file('gradle/ext.gradle')
     repositories {
+        maven { url 'https://jitpack.io' }
         maven {
             url uri('../gradle_plugins')
         }
@@ -23,6 +24,7 @@ buildscript {
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:0.10.0"
         classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.3"
         classpath "digital.wup:android-maven-publish:3.6.3"
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
     }
 }
 
