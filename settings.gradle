@@ -52,4 +52,9 @@ project(':coverage-plugin').projectDir = new File('coverage/coverage-plugin')
 include ':coverage-lib'
 project(':coverage-lib').projectDir = new File('coverage/coverage-lib')
 
+include ':method-trace'
+project(':method-trace').projectDir = new File('trace/method-trace')
+include ':method-trace-lib'
+project(':method-trace-lib').projectDir = new File('trace/method-trace-lib')
+
 //pull request

@@ -12,7 +12,7 @@ buildscript {
     }
     ext {
         plugin_version = upload_version
-        enableMinify = true
+        enableMinify = false
     }
     dependencies {
         classpath "com.bytedance.android.byteX:base-plugin:${plugin_version}"
@@ -29,6 +29,8 @@ buildscript {
         classpath "com.bytedance.android.byteX:coverage-lib:${plugin_version}"
         classpath "com.bytedance.android.byteX:coverage-plugin:${plugin_version}"
         classpath "com.bytedance.android.byteX:butterknife-check-plugin:${plugin_version}"
+        classpath "com.bytedance.android.byteX:method-trace:${plugin_version}"
+        classpath "com.bytedance.android.byteX:method-trace-lib:${plugin_version}"
     }
 }
 
@@ -95,5 +97,6 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation "com.google.code.gson:gson:2.8.2"
     implementation "com.bytedance.android.byteX:coverage-lib:${plugin_version}"
+    implementation "com.bytedance.android.byteX:method-trace-lib:${plugin_version}"
 }
 apply from: project.file('plugin-bytex.gradle')
