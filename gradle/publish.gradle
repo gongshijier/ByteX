@@ -1,8 +1,10 @@
 //apply from: "$rootDir/gradle/publish-maven.gradle"
-
-apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.gongshijier'
+//
 //if (upload2JCenter) {
 //    println("upload2JCenter=true")
 //    apply from: "$rootDir/gradle/publish-bintray.gradle"
 //}
+
+// jitpack 代码
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.gongshijier'

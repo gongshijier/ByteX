@@ -26,11 +26,10 @@ class MethodTraceClassVisitor(private var context: MethodTraceContext, extension
             signature: String?,
             exceptions: Array<out String>?
     ): MethodVisitor {
-
-        val methodVisitor = super.visitMethod(access, name, descriptor, signature, exceptions)
-        if (mClassName.contains("com/ss/android/ugc/bytex/example")) {
+        if (context.shouldTrace(mClassName, name)) {
+            val methodVisitor = super.visitMethod(access, name, descriptor, signature, exceptions)
             return TraceMethodVisitor(context, mClassName, Opcodes.ASM6, methodVisitor, access, name, descriptor)
         }
-        return methodVisitor
+        return super.visitMethod(access, name, descriptor, signature, exceptions)
     }
 }

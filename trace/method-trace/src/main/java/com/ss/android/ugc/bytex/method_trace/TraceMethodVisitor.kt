@@ -14,11 +14,10 @@ class TraceMethodVisitor(private var context: MethodTraceContext,
 
         context.logger.i("TraceMethodVisitor", "----插桩----className: $className  methodName: ${methodName}------")
 
-        if (methodName != null && className != null) {
+        if (methodName != null) {
             mv.visitLdcInsn("$className#$methodName");
             mv.visitMethodInsn(INVOKESTATIC, "com/ss/android/ugc/bytex/method_trace_lib/MyTrace", "beginSection", "(Ljava/lang/String;)V", false);
         }
-
     }
 
     override fun onMethodExit(opcode: Int) {
